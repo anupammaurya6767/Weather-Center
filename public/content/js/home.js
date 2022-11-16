@@ -62,7 +62,7 @@ const getWeatherResponse = (latt, longt, err) => {
 //* create weather data box
 const createWeatherDataBox = (weatherResponse) => {
     const day = createDays(weatherResponse.dt)
-    const humidity = weatherResponse.humidity
+    const wind = weatherResponse.wind_speed
     const min_temp = weatherResponse.temp.min
     const pressure = weatherResponse.pressure
     const weather_icon = weatherResponse.weather[0].icon
@@ -71,7 +71,7 @@ const createWeatherDataBox = (weatherResponse) => {
     const children_element_of_weather_box =
         `<h3 class="p-0 m-0"><img src="https://openweathermap.org/img/w/${weather_icon}.png"> ${day}</h3>
     <h3 class="p-0 m-0">${min_temp}°C</h3>
-    <h3 class="p-0 m-0">${humidity}% <i class="bi bi-droplet"></i></h3>
+    <h3 class="p-0 m-0">${wind}m/s <i class="bi bi-droplet"></i></h3>
     <h3 class="p-0 m-0">${pressure}Pa</h3>`
 
     //* create weather box
